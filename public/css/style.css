@@ -1,0 +1,695 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img, video {
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input, select, textarea {
+  outline: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+body {
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+.admin {
+  margin-top: 200px;
+}
+.admin .logi2 {
+  display: flex;
+  justify-content: center;
+}
+.admin .logi2 h2 {
+  font-size: 75px;
+}
+.admin .adminlogin {
+  width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.admin .adminlogin .adminbox .adminin {
+  width: 800px;
+  height: 80px;
+  margin-top: 98px;
+  padding-left: 15px;
+  font-size: 30px;
+}
+.admin .adminlogin .adminbtn {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin .adminlogin .adminbtn .butt {
+  margin-top: 100px;
+  width: 220px;
+  height: 80px;
+  background-color: #fff;
+  border: none;
+  margin: 0 20px;
+  font-size: 30px;
+  border: 1px solid #000;
+}
+.admin .adminlogin .adminbtn .butt:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.adminmenu {
+  display: flex;
+  justify-content: center;
+}
+.adminmenu .admin_menu {
+  display: flex;
+}
+.adminmenu .admin_menu li {
+  line-height: 100px;
+  margin: 0 50px;
+}
+.adminmenu .admin_menu li .rdfsf {
+  font-size: 30px;
+  color: #000;
+  opacity: 0.3;
+}
+.adminmenu .admin_menu li .rdfsfd {
+  color: #000;
+  opacity: 1;
+}
+
+.insertcontainer {
+  margin: 300px auto;
+}
+.insertcontainer .insert_center2 {
+  width: 1100px;
+  margin: 100px auto;
+}
+.insertcontainer .insert_center2 .name .put {
+  width: 50%;
+  height: 40px;
+  margin: 10px 0;
+  padding-left: 15px;
+}
+.insertcontainer .insert_center2 .area {
+  width: 100%;
+  height: 250px;
+  resize: none;
+  padding: 15px 0 0 15px;
+}
+.insertcontainer .insert_center2 .filebox {
+  margin-top: 20px;
+}
+.insertcontainer .insert_center2 .filebox .file {
+  border: none;
+  width: 150px;
+  height: 50px;
+}
+.insertcontainer .insert_center2 .btnss .btn {
+  border: none;
+  width: 150px;
+  height: 50px;
+  background-color: #fff;
+}
+.insertcontainer .insert_center2 .btnss .qws {
+  color: #000;
+  border: 1px solid #adb5bd;
+}
+.insertcontainer .insert_center2 .btnss .qws:hover {
+  background-color: #000;
+  color: #fff;
+}
+.insertcontainer .insert_center2 .btnss .qwq {
+  color: #000;
+  border: 1px solid #adb5bd;
+}
+.insertcontainer .insert_center2 .btnss .qwq:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+#login_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+#login_container .center {
+  width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#login_container .center #login_form {
+  width: 50%;
+  text-align: center;
+}
+#login_container .center #login_form .logi {
+  text-align: center;
+}
+#login_container .center #login_form .btn {
+  width: 183px;
+  margin: 30px auto;
+  display: flex;
+  border: 2px solid #f4f4f4;
+  border-radius: 20px;
+}
+#login_container .center #login_form .btn .btns {
+  color: #000;
+  border: none;
+  line-height: 30px;
+  width: 50%;
+  background-color: #fff;
+}
+#login_container .center #login_form .btn .qwe {
+  border-right: 1px solid #f4f4f4;
+}
+#login_container .center #login_form .line .text {
+  padding-left: 23px;
+  width: 80%;
+  height: 54px;
+  border-radius: 20px;
+  border: none;
+  border: 2px solid #f4f4f4;
+}
+#login_container .center #login_form .line .pass {
+  margin: 22px 0 22px 0;
+}
+#login_container .center #login_form .btnok {
+  text-align: start;
+  margin-left: 34px;
+}
+#login_container .center #login_form .btnok .qwe {
+  width: 144px;
+  height: 54px;
+  border: 1px solid #acacac;
+  color: #000;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 34px;
+}
+#login_container .center #login_form .btnok .qwe:hover {
+  color: #fff;
+  background-color: #000;
+}
+#login_container .center #login_form .btnok .canc {
+  width: 144px;
+  height: 54px;
+  border: 1px solid #acacac;
+  color: #000;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 34px;
+}
+#login_container .center #login_form .btnok .canc:hover {
+  color: #fff;
+  background-color: #000;
+}
+#login_container .center .im22 {
+  width: 50%;
+  position: relative;
+}
+#login_container .center .im22 img {
+  width: 100%;
+}
+#login_container .center .im22 .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login_container .center .im22 .bg .text {
+  background-color: #000;
+  opacity: 0.8;
+  width: 270px;
+  height: 216px;
+  border: 2px solid #5f5344;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#login_container .center .im22 .bg .text h2 {
+  color: #fff;
+}
+#login_container .center .im22 .bg .text h2:hover {
+  color: yellow;
+}
+
+#join_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+#join_container .center {
+  width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#join_container .center #join_form {
+  width: 50%;
+  text-align: center;
+}
+#join_container .center #join_form .logi {
+  text-align: center;
+}
+#join_container .center #join_form .btn {
+  width: 183px;
+  margin: 30px auto;
+  display: flex;
+  border: 2px solid #f4f4f4;
+  border-radius: 20px;
+}
+#join_container .center #join_form .btn .btns {
+  border: none;
+  line-height: 30px;
+  width: 50%;
+  background-color: #fff;
+  color: #000;
+}
+#join_container .center #join_form .btn .qwe {
+  border-right: 1px solid #f4f4f4;
+}
+#join_container .center #join_form .line {
+  position: relative;
+}
+#join_container .center #join_form .line .text {
+  margin-bottom: 35px;
+  padding-left: 23px;
+  width: 80%;
+  height: 54px;
+  border-radius: 20px;
+  border: none;
+  border: 2px solid #f4f4f4;
+}
+#join_container .center #join_form .line .message {
+  position: absolute;
+  left: 45px;
+  bottom: 10px;
+}
+#join_container .center #join_form .line.ok .text, #join_container .center #join_form .line.ok .chk2 {
+  border: 1px solid #00c850;
+}
+#join_container .center #join_form .line.no .text, #join_container .center #join_form .line.no .chk2 {
+  border: 1px solid red;
+}
+#join_container .center #join_form .btnok {
+  text-align: start;
+  margin-left: 34px;
+}
+#join_container .center #join_form .btnok .qwe {
+  width: 144px;
+  height: 54px;
+  border: 1px solid #acacac;
+  color: #000;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 34px;
+}
+#join_container .center #join_form .btnok .qwe:hover {
+  color: #fff;
+  background-color: #000;
+}
+#join_container .center #join_form .btnok .canc {
+  width: 144px;
+  height: 54px;
+  border: 1px solid #acacac;
+  color: #000;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 34px;
+}
+#join_container .center #join_form .btnok .canc:hover {
+  color: #fff;
+  background-color: #000;
+}
+#join_container .center #join_form .dont .blise {
+  color: #000;
+}
+#join_container .center .im22 {
+  width: 50%;
+  position: relative;
+}
+#join_container .center .im22 img {
+  width: 100%;
+}
+#join_container .center .im22 .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#join_container .center .im22 .bg .text {
+  background-color: #000;
+  opacity: 0.8;
+  width: 270px;
+  height: 216px;
+  border: 2px solid #5f5344;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#join_container .center .im22 .bg .text h2 {
+  color: #fff;
+}
+#join_container .center .im22 .bg .text:hover {
+  color: yellow;
+}
+#join_container .center .im22:hover .bg {
+  opacity: 0.6;
+  z-index: 55;
+}
+
+.header {
+  position: relative;
+}
+.header .logia {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.header .logia .center {
+  width: 1100px;
+}
+.header .logia .center .login {
+  display: flex;
+  justify-content: flex-end;
+}
+.header .logia .center .login .condition {
+  display: flex;
+  align-items: center;
+}
+.header .logia .center .login .condition .loj {
+  line-height: 80px;
+  color: #000;
+  margin-right: 40px;
+}
+.header .logia .center .login .condition .arr {
+  color: #000;
+}
+.header .logia .center .login .condition .name a {
+  color: #000;
+}
+.header .logia .center .login .condition .dsf {
+  color: #000;
+}
+.header .logia .center .login .condition .dsf::after {
+  content: "";
+  margin: 0 10px;
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: #000;
+}
+.header .samsung {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -53px;
+  background-color: #fff;
+  z-index: 99;
+}
+.header .samsung .center2 {
+  margin: 0 auto;
+  width: 1100px;
+  background-color: #fff;
+  border-radius: 30px;
+  position: relative;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+  transition: all 1s;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+.header .samsung .center2 .logo {
+  display: flex;
+  align-items: center;
+}
+.header .samsung .center2 .gnb {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.header .samsung .center2 .gnb > li {
+  margin: 0 20px;
+  line-height: 80px;
+  width: 100px;
+}
+.header .samsung .center2 .gnb > li:nth-child(1).on > a {
+  display: inline-block;
+  line-height: 40px;
+  width: 100%;
+  background-color: red;
+  border-radius: 20px;
+  color: #fff;
+}
+.header .samsung .center2 .gnb > li:nth-child(2).on > a {
+  display: inline-block;
+  line-height: 40px;
+  width: 100%;
+  background-color: blue;
+  border-radius: 20px;
+  color: #fff;
+}
+.header .samsung .center2 .gnb > li:nth-child(3).on > a {
+  display: inline-block;
+  line-height: 40px;
+  width: 100%;
+  background-color: green;
+  border-radius: 20px;
+  color: #fff;
+}
+.header .samsung .center2 .gnb > li:nth-child(4).on > a {
+  display: inline-block;
+  line-height: 40px;
+  width: 100%;
+  background-color: orange;
+  border-radius: 20px;
+  color: #fff;
+}
+.header .samsung .center2 .gnb > li:nth-child(5).on > a {
+  display: inline-block;
+  line-height: 40px;
+  width: 100%;
+  background-color: pink;
+  border-radius: 20px;
+  color: #fff;
+}
+.header .samsung .center2 .gnb > li:nth-child(6).on > a {
+  display: inline-block;
+  line-height: 40px;
+  width: 100%;
+  background-color: darkmagenta;
+  border-radius: 20px;
+  color: #fff;
+}
+.header .samsung .center2 .gnb > li a {
+  text-align: center;
+  color: #000;
+}
+.header .samsung .center2 .btn {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header .samsung .center2 .btn .line {
+  margin: 6px;
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.5s;
+}
+.header .samsung .center2 .btn.chg .top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(45deg);
+}
+.header .samsung .center2 .btn.chg .mid {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.header .samsung .center2 .btn.chg .bot {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+.header .samsung .sideM {
+  display: flex;
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  right: -280px;
+  top: 0;
+  background-color: #dc3545;
+  transition: all 0.5s;
+}
+.header .samsung .sideM .linebtn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.header .samsung .sideM .linebtn .btn2 {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 12%;
+  transform: translateY(-50%);
+}
+.header .samsung .sideM .linebtn .btn2 .line {
+  display: block;
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+.header .samsung .sideM .linebtn .btn2 .top2 {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  transform: rotate(45deg);
+}
+.header .samsung .sideM .linebtn .btn2 .mid2 {
+  transform: translateX(10px);
+  opacity: 0;
+  margin: 5px 0;
+}
+.header .samsung .sideM .linebtn .btn2 .bot2 {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  transform: rotate(-45deg);
+}
+.header .samsung .sideM .two {
+  margin-top: 125px;
+}
+.header .samsung .sideM .two li {
+  margin: 30px 0 0 83px;
+}
+.header .samsung .sideM .two li span {
+  position: relative;
+  top: 25px;
+  left: -27px;
+}
+.header .samsung .sideM .two li a {
+  display: block;
+  color: #fff;
+}
+.header .samsung .sideM .three .face {
+  display: flex;
+}
+.header .samsung .sideM .three .face li {
+  margin-left: 34px;
+}
+.header .samsung .sideM .three .face li span {
+  color: #fff;
+}
+.header .samsung .sideM .three p {
+  margin: 0 0 104px 34px;
+  line-height: 34px;
+  color: #fff;
+  font-size: 13px;
+}
+.header .samsung .sideM .sideM.move {
+  right: 0;
+}
+
+#header.fixer {
+  position: fixed;
+  top: 0;
+  bottom: unset;
+  display: block;
+}
+#header.fixer .center2 {
+  width: 100%;
+  border-radius: 0;
+}
+
+.container .slideWrap {
+  width: 100%;
+  height: 500px;
+}
+.container .slideWrap .swiper-wrapper .swiper-slide {
+  background: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.container .swiper .circleBtn {
+  position: absolute;
+  bottom: 22px;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+}
+.container .swiper .circleBtn .swiper-pagination-bullet {
+  margin: 0 10px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 3px solid orange;
+  opacity: 0.5;
+}
+.container .swiper .circleBtn .swiper-pagination-bullet-active {
+  background-color: #fff;
+  border: 3px solid red;
+  opacity: 1;
+}
+.container .swiper .prevBtn {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+}
+.container .swiper .nextBtn {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+}

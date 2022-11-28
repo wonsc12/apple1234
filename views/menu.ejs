@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴소개 페이지</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/js/header.js"defer></script>
+    <script src="/js/sideBtn.js"defer></script>
+    <script src="/js/menucarousel.js"defer></script>
+    <script src="/js/menulist.js"defer></script>
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+    <div class="menucontainer">
+        <div class="trcont1">
+            <div class="trimage">
+                <img src="/img/cof3.jpg">
+                <div class="bg"></div>   
+            </div>
+            <div class="trtext">
+                <h2>MENU</h2>
+                <p class="tral">Always beside you</p>
+                <p class="trhan">한잔의 커피 마음을 달래다.</p>
+                <div class="trbox">
+                    <ul class="trgnb">
+                        <li><a class="fsdf" href="/menu/Beverage">음료</a></li>
+                        <li><a href="/menu/food">음식</a></li>
+                        <li><a href="/menu/Signature">Signature</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="menucaro">
+            <div class="menus2">
+                <div class="ulmenus3">
+                    <ul class="memeus3">
+                        <li class="on"><a href="/menu/Beverage">음료</a></li>
+                        <li><a href="/menu/food">음식</a></li>
+                        <li><a href="/menu/Signature">Signature</a></li>
+                    </ul>
+                </div>
+                <div class="listwrap2">
+                    
+                    <% for(let i=0; i< prdData.length; i++) {%>
+                        
+                        <div class="listt">
+                            <div class="munuimage2">
+                                <img src="/upload/<%- prdData[i].thumbnail %>">
+                            </div>
+                            <div class="textp2">
+                                <p><%- prdData[i].name %></p>
+                            </div>
+                        </div>
+                    <% } %>  
+                </div>
+                <div class="menubtns">
+                    <div class="brsa ca_prev"><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="brsa ca_next"><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="menusds">
+            <div class="ulmenus">
+                <ul class="memeus">
+                    <li class="on"><a href="/menu/Beverage">음료</a></li>
+                    <li><a href="/menu/food">음식</a></li>
+                    <li><a href="/menu/Signature">Signature</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menus">
+            <div class="listwrap">
+                <% for(let i=0; i< prdData.length; i++) {%>
+                    <div class="lists">
+                        <div class="munuimage">
+                            <img src="/upload/<%- prdData[i].thumbnail %>">
+                        </div>
+                        <div class="textp">
+                            <p><%- prdData[i].name %></p>
+                        </div>
+                    </div>
+                <% } %>  
+            </div>
+            <div class="btnWrap">
+                <button class="loadMore">더보기</button>
+            </div>  
+        </div>
+    </div>
+    <%- include("common/footer.ejs") %>
+    <script>
+        //현재 보고있는 페이지 주소값
+        let currentPath = window.location.pathname;
+        //현재 페이지 주소값과 비교할 메뉴들 선택
+        const memeus = document.querySelectorAll(".memeus li");
+
+        memeus.forEach((item,index)=>{ //반복문 3번
+           
+            let memeusRef =  item.querySelector("a").getAttribute("href"); //해당 li태그 메뉴에 있는 자식 a태그의 href 속성값 가져옴
+                
+                if(currentPath === memeusRef){ // 현재 페이지 경로값과 a태그 href값과 비교해서 맞는 li태그만 활성화 작업
+                        item.classList.add("on");
+                        
+                        
+                }
+                else {
+                        item.classList.remove("on");
+                }
+        });
+        let currentPath2 = window.location.pathname;
+        const memeus3 = document.querySelectorAll(".memeus3 li");
+
+        memeus3.forEach((item,index)=>{ //반복문 3번
+           
+           let memeusRef2 =  item.querySelector("a").getAttribute("href"); //해당 li태그 메뉴에 있는 자식 a태그의 href 속성값 가져옴
+               
+               if(currentPath2 === memeusRef2){ // 현재 페이지 경로값과 a태그 href값과 비교해서 맞는 li태그만 활성화 작업
+                       item.classList.add("on");
+                       
+                       
+               }
+               else {
+                       item.classList.remove("on");
+               }
+       });
+    </script>    
+</body>
+</html>

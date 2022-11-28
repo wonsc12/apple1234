@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입페이지</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="join_container">
+        <div class="center">
+            <form id="join_form" action="/joindb" method="post">
+                <div class="logi">
+                    <h2>회원가입 페이지</h2>
+                </div>
+                <div class="line">
+                    <input class="text name" id="userid" text="text" name="userid" placeholder="아이디">
+                    <p class="message idcheck"></p>
+                </div>
+                <div class="line">
+                    <input class="text email" id="useremail" text="text" name="useremail" placeholder="이메일">
+                    <p class="message idcheck"></p>
+                </div>
+                <div class="line">
+                    <input class="text nick" id="userenick" type="text" name="usernick" placeholder="이름">
+                    <p class="message idcheck"></p>
+                </div>
+                <div class="line">
+                    <input class="text nick" id="userephone" type="text" name="userphone" placeholder="전화번호">
+                    <p class="message idcheck"></p>
+                </div>
+                <div class="line">
+                    <input class="text pass chk" id="userpass" type="text" name="userpass" placeholder="비밀번호">
+                    <p class="message idcheck"></p>
+                </div>
+                <div class="line">
+                    <input class="text pass chk2" id="userpass2" type="text" name="userpass2" placeholder="비밀번호 재확인">
+                    <p class="message idcheck"></p>
+                </div>
+                <div class="btnok">
+                    <button class="btns qwe" id="joinBtn" type="submit">회원가입</button>
+                    <button class="btns canc" type="button">취소</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+       
+        
+
+        const cancel = document.querySelector(".canc");
+            cancel.addEventListener("click",function(){
+            // 취소버튼 누루면 / 경로로 요청
+            location.href = "/"; 
+         });
+        
+        
+
+    
+        // 1. 태그 선택들 (input 태그들 , 버튼)
+        const users = document.querySelectorAll(".text");
+        const Btn = document.querySelector("#joinBtn");
+        const Btn2 = document.querySelector("#joinBtn2");
+        const chk = document.querySelector(".chk");
+        const chk2 = document.querySelector(".chk2");
+        // 필요한 데이터 정리정돈 
+        let datalist = [
+        {
+            regexCheck:/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/,
+            okMessage:"아이디 재대로 입력하였음.",
+            noMessage:"6자리부터 20자리까지 영문,숫자,기호만 가능합니다.",
+            yesOrno:false
+        },
+       
+        {
+            regexCheck:/^[\w]+\@+[a-z]+\.[a-z]{2,3}$/,
+            okMessage:"이메일을 재대로 입력하였음.",
+            noMessage:"이메일 형식에 맞지 않습니다.",
+            yesOrno:false
+        },
+         {
+            regexCheck:/^[ㄱ-힣]{2,5}$/,
+            okMessage:"이름을 재대로 입력하였음.",
+            noMessage:"형식에 맞지 않습니다.",
+            yesOrno:false
+        },
+        {
+            regexCheck:/^(010)\-[0-9]{4}\-\d{4}$/,
+            okMessage:"전화번호를 재대로 입력하였음",
+            noMessage:"전화번호 형식에 맞지 않음",
+            yesOrno:false
+        },
+        {
+            regexCheck:/^[\w\#\$\!\*]{4,10}$/,
+            okMessage:"비번 재대로 입력하였음.",
+            noMessage:"4자리부터 10자리까지 영문,숫자,기호만 가능합니다.",
+            yesOrno:false
+        },
+        
+    ];
+    
+    let lastCheck = false; // dataList안에  yesOrno 값이 전부 true일때 true 값으로 변경
+    
+    // .3 키보드 이벤트 keyup
+    users.forEach(function(item,index){
+        // keyup이벤트 각각 input 태그에 달아줌
+        item.addEventListener("keyup",function(){ //정규식 표현체크/ 조건문 리펙토링 과정 들어간 함수
+
+            inputCheck(item,datalist[index]);
+        });
+
+    });
+    chk2.addEventListener("keyup",function(){
+            let chkvalue = chk.value;
+            let chk2value = chk2.value;
+
+            if(chkvalue == chk2value){
+                chk2.parentElement.className = "line ok";
+                chk2.nextElementSibling.innerHTML = "비밀번호가 일치합니다";
+                datalist[1].yesOrno = true;
+            }
+            else{
+                chk2.parentElement.className = "line no";
+                chk2.nextElementSibling.innerHTML = "비밀번호가 일치하지않습니다";
+                datalist[1].yesOrno = false;
+            }
+        });
+    
+    // 4. inputCheck 함수 정의 구간 
+    
+    function inputCheck(tag,data){
+        let values = tag.value;
+        let checkComp = data.regexCheck.test(values);
+
+        if(checkComp){
+            // 해당 인풋태그의 부모를 선택해서 클래스 이름 변경(성공)
+            tag.parentElement.className = "line ok";
+            // 성공메시지 출력
+            tag.nextElementSibling.innerHTML = data.okMessage;
+            // yesOrno에 ture 값으로 변경
+            data.yesOrno = true;
+            console.log(data.yesOrno);
+        }
+        else{
+            tag.parentElement.className = "line no";
+            tag.nextElementSibling.innerHTML = data.noMessage;
+            data.yesOrno = false;
+            console.log(data.yesOrno);
+        }
+    }
+        // 5 버튼을 눌렀을때 yesOrno가 전부 ture면 -> lastcheck true
+    // 하나라도 false 가 걸리면 -> lastcheck false로
+    // every() <- 여러개의 데이터값이 특정조건에 맞다면 true 아니면 false값
+    
+    Btn.addEventListener("click",function(event){
+        
+        //every 함수로 해당 프로퍼티들 값이 ture면 lastcheck true
+        //하나라도 false라면 lastcheck는 false
+
+        lastCheck = datalist.every(element => element.yesOrno == true);
+
+        if(lastCheck){ //true
+            alert("회원가입이 완료되었습니다.")
+        }
+        else{ //false
+            alert("필수입력사항 다시 체크해보세요")
+            event.preventDefault();
+        }
+        
+    });
+    Btn2.addEventListener("click",function(event){
+        
+        //every 함수로 해당 프로퍼티들 값이 ture면 lastcheck true
+        //하나라도 false라면 lastcheck는 false
+
+        lastCheck = datalist.every(element => element.yesOrno == true);
+
+        if(lastCheck){ //true
+            alert("회원가입이 완료되었습니다.")
+        }
+        else{ //false
+            alert("필수입력사항 다시 체크해보세요")
+            event.preventDefault();
+        }
+        
+    });
+    </script>
+</body>
+</html>

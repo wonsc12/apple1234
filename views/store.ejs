@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매장안내</title>
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+    <div class="searcg2d">
+        <!-- 사용자가 등록 매장검색구간 -->
+        <form action="/search/local" method="get">
+            <div class="searmeneu">
+                <h2>지역/매장별검색</h2>
+            </div>
+            <div class="searc">
+                <div class="search3">
+                    <div class="text2">지역 검색</div>
+                    <!-- 시/도 선택 필수입력 required-->  
+                    <select class="city1" name="city1">
+                        <option class="city1option" value>시/도 선택</option>
+                    </select>
+                    <!-- 구/군 선택 -->
+                    <select class="city2" name="city2">
+                        <option class="city2option" value>구/군 선택</option>
+                    </select>
+                    <button class="city3" type="submit">검색</button>
+                </div>
+            </div>
+        </form>
+        <form action="/search/storename" method="get">
+            <div class="seac">
+                <div class="search4" >
+                    <div class="text3">매장명</div>
+                    <input class="ciy4" tpye="text" name="name">
+                    <button class="ciy5" type="submit">검색</button>
+                </div>
+            </div>
+        </form>
+        </div>
+        <div class="storemune3">
+            <h2>매장안내</h2>
+        </div>
+        <div class="storediv">
+            <div class="storelist">
+                <!-- 매장 검색시 검색결과 없는 경우 -->
+                <% if(storelist.length === 0 ) { %>
+                    <div>해당하는 매장이 없습니다</div>
+                <% } else { %>
+                    <div class="storebox">
+                        <div class="storebox1 ere">매장명</div>
+                        <div class="storebox2 ere">위치</div>
+                        <div class="storebox3 ere">상세주소</div>
+                        <div class="storebox4 ere">매장 전화번호</div>
+                    </div>    
+                <!-- 처음들어왔을 때 모든 매장 리스트 보여줌 -->
+                    <% for(let i = 0; i < storelist.length; i++){ %>
+                    <div class="list">
+                        <div class="line1 wriw">
+                            <div><%- storelist[i].name %></div>
+                        </div>
+                        <div class="line2 wriw">
+                            <div><%- storelist[i].sido + storelist[i].sigugun %></div>
+                        </div>
+                        <div class="line3 wriw">
+                            <div><%- storelist[i].adress %></div>
+                        </div>
+                        <div class="line4 wriw">
+                            <div><%- storelist[i].phone %></div>
+                        </div>
+                    </div>
+                    <% } %>  
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <%- include("common/footer.ejs") %>
+    <script src="/js/hangjungdong.js"></script>
+    <script src="/js/storeoption.js"></script>   
+</body>
+</html>

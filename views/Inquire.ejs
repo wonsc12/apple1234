@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의게시판</title>
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+    <div class="brd_center2">
+        <form id="brd_form" action="/Inquire" method="post" enctype="multipart/form-data">
+            <div class="name">
+                <input class="put" id="name" type="text" name="name" placeholder="이름">
+                <input class="put" id="email" type="text" name="email" placeholder="이메일">
+            </div>
+            <div class="name teq">
+                <input class="put" id="subject" type="text" name="subject" placeholder="주제">
+                <input class="put" id="Number" type="text" name="Number" placeholder="폰번호">
+            </div>
+            <textarea class="area"name="context" placeholder="내용 입력" ></textarea>
+            <div class="filebox">
+                <input class="file" type="file" name="file">
+            </div>
+            <div class="btnss">
+                <button class="btn qws" type="submit">작성하기</button>
+                <button class="btn qwq" type="button">취소</button>
+            </div>
+        </form>
+    </div>
+    <%- include("common/footer.ejs") %>
+    <script>
+        const cancel = document.querySelector(".qwq");
+            cancel.addEventListener("click",function(){
+            // 취소버튼 누루면 /list 경로로 요청
+            location.href = "/brdlist"; 
+        });
+    </script>    
+</body>
+</html>

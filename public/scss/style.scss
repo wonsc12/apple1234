@@ -1,0 +1,287 @@
+* { margin:0 ;padding:0;}
+    ul,li,ol { list-style:none;}
+    a { text-decoration:none;}
+    img,video { vertical-align:middle;}
+    table {border-collapse:collapse;}
+    input,select,textarea { outline:0;}
+    textarea { resize:none;}
+    body { line-height:1; overflow-x: hidden;} 
+
+
+    .admin { margin-top: 200px; 
+        .logi2 {  display: flex; justify-content: center;
+            h2{font-size: 75px;}
+        }
+        .adminlogin { width: 1100px; margin: 0 auto; text-align: center;
+            
+            .adminbox {
+                .adminin { width: 800px; height: 80px;  margin-top: 98px; padding-left: 15px; font-size: 30px;}
+             }
+            
+            .adminbtn { margin-top: 100px;  display: flex; justify-content: center; align-items: center;    
+                .butt{ margin-top: 100px;
+                    width: 220px; height: 80px; background-color: #fff; border: none;
+                    margin: 0 20px; font-size: 30px; border: 1px solid #000; 
+                    &:hover { background-color: #000; color: #fff;}
+                }
+            }
+        }
+    }
+
+    // 관리자 공지 이벤트 매장 상품 
+
+    .adminmenu { display: flex; justify-content: center;
+        .admin_menu { display: flex;
+            li { line-height: 100px; margin: 0 50px;
+                .rdfsf {font-size: 30px; color: #000; opacity: 0.3;
+                    
+                }
+                .rdfsfd { color: #000; opacity: 1;}
+                
+            
+            }
+        }
+    }
+    
+
+    //// 관리자 글 작성 페이지
+
+     .insertcontainer { margin: 300px auto; 
+        
+        .insert_center2 { width: 1100px; margin: 100px auto;
+            .name {
+                .put { width: 50%; height: 40px; margin: 10px 0; padding-left:  15px;
+
+                }
+                
+            }
+            .area { width: 100%; height: 250px; resize: none; padding: 15px 0 0 15px;}
+                .filebox { margin-top: 20px;
+                    .file { border: none; width: 150px; height: 50px;}
+                }
+                .btnss {
+                    .btn { border: none; width: 150px; height: 50px; background-color: #fff; }
+                    .qws { color: #000; border: 1px solid #adb5bd; 
+                        &:hover { background-color: #000; color: #fff;}
+                    }
+                    .qwq { color: #000; border: 1px solid #adb5bd; 
+                        &:hover { background-color: #000; color: #fff;}}
+                }
+
+        }
+     }
+
+     // 로그인 페이지
+
+#login_container { display: flex; justify-content: center;  margin-top: 200px;
+    .center { width: 960px; display: flex; justify-content: space-between;align-items: center;
+        #login_form { width: 50%; text-align: center;
+            .logi { text-align: center;
+                h2 {
+
+                }
+            }
+            .btn { width: 183px; margin: 30px auto; display: flex; 
+                border: 2px solid #f4f4f4;  border-radius: 20px;
+                .btns { color: #000; border: none; line-height: 30px; width: 50%; background-color: #fff;
+                    
+                }
+                .qwe { border-right: 1px solid #f4f4f4;}
+               
+            }
+            .line {
+                .text {padding-left: 23px; width:80%; height: 54px; border-radius: 20px; border: none; border: 2px solid #f4f4f4;}
+                .pass{ margin: 22px 0 22px 0;}
+            }
+            .btnok {  text-align: start; margin-left: 34px;
+                .qwe { width: 144px; height: 54px; border: 1px solid #acacac; color: #000; background-color: #fff; border-radius: 20px;margin-bottom: 34px;
+                    &:hover {color: #fff; background-color: #000;}
+                }
+                .canc { width: 144px; height: 54px; border: 1px solid #acacac; color: #000; background-color: #fff;  border-radius: 20px;margin-bottom: 34px;
+                    &:hover {color: #fff; background-color: #000;}
+                }
+            
+            
+            }
+
+            .dont {}
+        }
+        .im22 { width: 50%; position: relative;
+            img { width: 100%;}
+            .bg { position: absolute;left:0;top:0; transition:all 0.5s; width:100%; height:100%; background-color: #000; opacity:0;  z-index: 3;display: flex; justify-content: center; align-items: center;
+                .text {  background-color: #000; opacity: 0.8; width: 270px; height: 216px; border: 2px solid #5f5344;  text-align: center; display: flex; align-items: center; justify-content: center;
+                    h2 { color:#fff;
+                    &:hover{color: yellow;}}
+                }
+                
+            }
+            // &:hover .bg {opacity:0.6;z-index: 55;}
+        }
+    }
+}
+
+// 회원가입 페이지
+
+#join_container { display: flex; justify-content: center;  margin-top: 200px;
+    .center { width: 960px; display: flex; justify-content: space-between;align-items: center;
+        #join_form { width: 50%; text-align: center;
+            .logi { text-align: center;
+                h2 {
+
+                }
+            }
+            .btn { width: 183px; margin: 30px auto; display: flex; 
+                border: 2px solid #f4f4f4;  border-radius: 20px;
+                .btns {  border: none; line-height: 30px; width: 50%; background-color: #fff; color: #000;
+                    
+                }
+                .qwe { border-right: 1px solid #f4f4f4;}
+               
+            }
+            .line { position: relative;
+                .text {margin-bottom: 35px; padding-left: 23px; width: 80%; height: 54px; border-radius: 20px; border: none; border: 2px solid #f4f4f4;}
+                .name {}
+                .email {}
+                .pass{ }
+               
+                .message { position: absolute;left: 45px; bottom: 10px;}
+            }
+            .line.ok .text, .line.ok .chk2{border:1px solid #00c850;}
+            .line.no .text, .line.no .chk2{border:1px solid red;}    
+            
+            .btnok {  text-align: start; margin-left: 34px;
+                .qwe { width: 144px; height: 54px; border: 1px solid #acacac; color: #000; background-color: #fff; border-radius: 20px;margin-bottom: 34px;
+                    &:hover { color: #fff; background-color: #000;}
+                }
+                .canc { width: 144px; height: 54px; border: 1px solid #acacac; color: #000; background-color: #fff; border-radius: 20px;margin-bottom: 34px;
+                    &:hover { color: #fff; background-color: #000;}
+                }
+            }
+            .dont {
+                .blise { color: #000;}
+            }
+        }
+        .im22 { width: 50%; position: relative;
+            img { width: 100%;}
+            .bg { position: absolute;left:0;top:0; transition:all 0.5s; width:100%; height:100%; background-color: #000; opacity:0;  z-index: 3;display: flex; justify-content: center; align-items: center;
+                .text {  background-color: #000; opacity: 0.8; width: 270px; height: 216px; border: 2px solid #5f5344;  text-align: center; display: flex; align-items: center; justify-content: center;
+                    h2 { color:#fff;}
+                    &:hover{color: yellow;}
+                }
+                
+            }
+            &:hover .bg {opacity:0.6;z-index: 55;}
+        }
+    }
+}
+
+// 메인페이지
+
+.header { position: relative; 
+    .logia { background-color: #fff; display: flex; justify-content: center;
+        .center { width: 1100px; 
+            .login { display: flex; justify-content: flex-end;
+                .condition { display: flex; align-items: center;
+                    .loj { line-height: 80px; color: #000; margin-right: 40px; }
+                    .arr { color:#000; }
+                    .loginuser { }
+                    .logina {}
+                    .name { 
+                        a {color: #000;}
+                    }
+                    .loginb { 
+                        
+                    }
+                    .dsf {
+                        color: #000;
+                        &::after { content: ""; margin: 0 10px;
+                            display: inline-block; width: 1px; height: 12px; background-color: #000;}
+                    }
+                }
+            }
+        } 
+    }
+    .samsung {  margin: 0 auto; width: 100%; text-align: center; display: flex; justify-content: center; position: absolute; bottom: -53px; background-color: #fff; z-index: 99;
+        .center2 { margin: 0 auto;  width: 1100px;  background-color: #fff; border-radius: 30px; position: relative;
+                    box-shadow: 0px 3px 10px rgba(0,0,0,0.4) ; transition: all 1s; z-index: 10;
+                 display: flex; justify-content: center; 
+            .logo { display: flex; align-items: center;}
+            .gnb { display: flex; justify-content: center; text-align: center;
+                
+                > li { margin: 0 20px; line-height: 80px; width: 100px;
+                    &:nth-child(1).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: red; border-radius: 20px; color: #fff;}
+                    &:nth-child(2).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: blue; border-radius: 20px; color: #fff;}
+                    &:nth-child(3).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: green; border-radius: 20px; color: #fff;}
+                    &:nth-child(4).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: orange; border-radius: 20px;color: #fff;}
+                    &:nth-child(5).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: pink; border-radius: 20px;color: #fff;}
+                    &:nth-child(6).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: darkmagenta; border-radius: 20px;color: #fff;}
+                    
+                    
+                    a { text-align: center; color: #000;  }
+                }  
+            }
+            .btn {  position: absolute; right:30px;top:50%; transform: translateY(-50%);
+                .line{ margin: 6px; display: block; width: 40px; height: 2px; background-color: #000;transition: all 0.5s;}
+    
+            }
+            .btn.chg .top {position: absolute; left:0 ;top:0;transform:rotate(45deg);}
+            .btn.chg .mid {transform: translateX(10px);opacity: 0;}
+            .btn.chg .bot {position: absolute; left:0 ;bottom:0;transform:rotate(-45deg);}
+            }
+            .sideM{  display: flex; width: 280px; height: 100vh; position: fixed;right: -280px;top: 0; background-color: #dc3545;transition: all 0.5s;
+            
+            
+                .linebtn{ position: relative; display: flex; ; flex-direction: column; 
+                    .btn2{ display: block ; position: absolute; right: 10px; top:12%; transform: translateY(-50%);
+                        .line { display: block; width: 35px; height: 2px; background-color: #fff;transition: all 0.5s;}
+                        .top2 {position: absolute; left:0 ;top:5px;transform:rotate(45deg);}
+                        .mid2 {transform: translateX(10px);opacity: 0;margin: 5px 0;}
+                        .bot2 {position: absolute; left:0 ;bottom:5px;transform:rotate(-45deg);}
+                    }
+                } 
+                .two { margin-top: 125px;
+                    li{ margin:30px 0 0 83px;
+                        span{position: relative; top: 25px; left:-27px;
+                        }
+                        a{display: block; color: #fff;}
+                    }
+                }
+                .three { 
+                    .face{ display: flex;
+                        li{margin-left: 34px;
+                            span {color: #fff;}
+                        }
+                    }
+                    p{margin:0 0 104px 34px; line-height: 34px; color: #fff; font-size: 13px;}
+                }
+            .sideM.move { right: 0;}
+        }
+    }
+}
+#header.fixer{position: fixed; top:0; bottom: unset; display: block;
+.center2 { width: 100%; border-radius: 0;}
+}
+.container { 
+    .slideWrap{width: 100%;height: 500px;
+        .swiper-wrapper {
+            .swiper-slide{ background: no-repeat; background-size: cover; background-position: center; 
+            
+            }
+            
+            
+        }
+    }
+    .swiper{
+        .circleBtn{position: absolute;  bottom: 22px; z-index: 99  ; 
+            display: flex; justify-content: center;
+            .swiper-pagination-bullet{margin: 0 10px; width: 20px; height: 20px;  background-color:transparent;border:3px solid orange; opacity: 0.5;}
+            .swiper-pagination-bullet-active { background-color: #fff; border:3px solid red; opacity: 1;}
+        }
+        
+        .prevBtn{position: absolute;  width: 100px; height: 100px;
+            left:50px; top:50%; transform: translateY(-50%);  z-index: 99;}
+        .nextBtn{position: absolute; width: 100px; height: 100px; 
+            right:50px; top:50%; transform: translateY(-50%); z-index: 99;}     
+    }
+
+}

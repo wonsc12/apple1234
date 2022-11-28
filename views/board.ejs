@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 페이징</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        ul,li,ol { list-style: none;}
+        .paging { display: flex;}
+        .paging li { margin: 0 15px;}
+        .paging li a { color: #000;}
+        .paging li.highlight a{ color: red;}
+    </style>
+</head>
+<body>
+    <!-- /boardtest?page=1 = ?page=1 -->
+    <!-- 데이터를 보여주는 구간 -->
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+        </tr>
+        <% for(let i = 0 ; i< prdData.length; i++) { %>
+        <tr>
+            <td><%- prdData[i].number %></td>
+            <td><%- prdData[i].title %></td>
+        </tr>
+        <% } %>    
+    </table>
+
+    <!-- 페이징 번호 생성된 구간 처음 이전 1,2,3 다음 마지막 -->
+    <ul class="paging">
+        <!-- 1번페이지인 경우 -->
+        <% if(pageNumber <=1 ){ %> 
+            <li>처음</li>
+        <% } else { %>
+            <!-- /boardtest?page=1 -->
+            <li><a href="?page=1">처음</a></li>
+        <% } %>    
+        
+        <% if(blockStart > totalBlock) { %>
+            <li><a href="?page=<%- blockStart - 1 %>">이전</a></li>
+        <% } %>
+
+        <% for( let i = blockStart; i<= blockEnd; i++) { %>
+            <% if(pageNumber == i) { %>
+            <li class="highlight"><a href="?page=<%- i %>"><%- i %></a></li>
+            <% } else { %>    
+            <li><a href="?page=<%- i %>"><%- i %></a></li>
+            <% } %>
+        <% } %>
+
+        <% if(blockNum < totalBlock) { %>
+            <li><a href="?page=<%- blockEnd +1 %>">다음</a></li>
+        <% } %>
+       <!-- pageNumber 내가보고 있는  -->
+        <% if( pageNumber >= paging) { %>
+            <li>마지막</li>
+        <% } else { %>
+            <li><a href="?page=<%- paging %>">마지막</a></li>
+        <% } %>
+    </ul>
+    
+</body>
+</html>
