@@ -42,6 +42,36 @@
             }
         }
     }
+    // 풋터 
+
+    .footer { background-color: #000;  padding: 60px 0;
+        .foo {  display: flex; width: 1280px; justify-content: space-between; margin: 0 auto;
+            .footop { 
+                h2 { color: #fff; margin-bottom: 30px;}
+                p{ color: #fff;}
+            }
+            .fooleft {
+                .gnb { display: flex;
+                    li {  margin: 0 20px;
+                        a {color: #fff;}
+                    }
+                }
+            }
+        }
+        .foobot { width: 1280px; margin: 0 auto; display: flex; justify-content: center;
+            .menu2 { 
+                li {  margin: 50px 15px;
+                    a { color: #fff; font-size: 20px;}
+                }
+            }
+        }
+        .footend { width: 1280px; border-top :1px solid #fff; display: flex; margin: 0 auto;
+            p { color: #fff; line-height: 30px; margin-top: 20px;
+
+            }
+        }
+        
+    }
     
 
     //// 관리자 글 작성 페이지
@@ -70,6 +100,93 @@
 
         }
      }
+     // header2
+
+     #header2 { width:100%;   background-color: #fff;
+        .logia { background-color: #fff; display: flex; justify-content: center;
+            .center { width: 1280px;
+                .login { display: flex; justify-content: flex-end;
+                    .condition { display: flex; align-items: center;
+                        .loj { line-height: 80px; color: #000; margin-right: 40px; }
+                        .arr { color:#000; }
+                        .loginuser { }
+                        .logina {}
+                        .name { 
+                            a {color: #000;}
+                        }
+                        .loginb { 
+                            
+                        }
+                        .dsf {
+                            color: #000;
+                            &::after { content: ""; margin: 0 10px;
+                                display: inline-block; width: 1px; height: 12px; background-color: #000;}
+                        }
+                    }
+                }
+            } 
+        }
+        
+        .samsung2 {  
+            .center2 { margin: 0 auto;  width: 1280px;background-color: #fff; border-radius: 30px; position: relative; 
+    
+                box-shadow: 0px 3px 10px rgba(0,0,0,0.4) ; transition: all 1s; z-index: 10;
+                display: flex; justify-content: center; align-items: center;
+                     
+                .logo { display: flex; align-items: center; text-align: center;}
+                .gnbb { display: flex; justify-content: center; text-align: center;
+                    
+                    > li { margin: 0 20px; line-height: 80px; width: 100px; background-color: #fff;
+                        
+                        
+                        
+                        a { text-align: center; color: #000;  }
+                    }  
+                }
+                .btn {  position: absolute; right:30px;top:50%; transform: translateY(-50%);
+                    .line{ margin: 6px; display: block; width: 40px; height: 2px; background-color: #000;transition: all 0.5s;}
+        
+                }
+                .btn.chg .top {position: absolute; left:0 ;top:0;transform:rotate(45deg);}
+                .btn.chg .mid {transform: translateX(10px);opacity: 0;}
+                .btn.chg .bot {position: absolute; left:0 ;bottom:0;transform:rotate(-45deg);}
+            }
+            .sideM{  display: flex; width: 280px; height: 100vh; position: fixed;right: -280px;top: 0; background-color: #dc3545;transition: all 0.5s;
+                
+                
+                .linebtn{ position: relative; display: flex; ; flex-direction: column; 
+                    .btn2{ display: block ; position: absolute; right: 10px; top:12%; transform: translateY(-50%);
+                        .line { display: block; width: 35px; height: 2px; background-color: #fff;transition: all 0.5s;}
+                        .top2 {position: absolute; left:0 ;top:5px;transform:rotate(45deg);}
+                        .mid2 {transform: translateX(10px);opacity: 0;margin: 5px 0;}
+                        .bot2 {position: absolute; left:0 ;bottom:5px;transform:rotate(-45deg);}
+                    }
+                } 
+                .two { margin-top: 125px;
+                    li{ margin:30px 0 0 83px;
+                        span{position: relative; top: 25px; left:-27px;
+                        }
+                        a{display: block; color: #fff;}
+                    }
+                }
+                .three { 
+                    .face{ display: flex;
+                        li{margin-left: 34px;
+                            span {color: #fff;}
+                        }
+                    }
+                    p{margin:0 0 104px 34px; line-height: 34px; color: #fff; font-size: 13px;}
+                }
+            }
+            .sideM.move { right: 0;}      
+        }
+    }
+    #header.fixer{position: fixed; top:0; bottom: unset; display: block;
+        .center2 { width: 100%; border-radius: 0;}
+        
+    }
+
+
 
      // 로그인 페이지
 
@@ -115,7 +232,7 @@
                 }
                 
             }
-            // &:hover .bg {opacity:0.6;z-index: 55;}
+            &:hover .bg {opacity:0.6;z-index: 55;}
         }
     }
 }
@@ -174,12 +291,132 @@
         }
     }
 }
+// 관리자 상품 등록페이지
+
+.prdstore { margin: 300px auto; 
+    .adminmenu{ display: flex; justify-content: center;
+        .admin_menu { display: flex;
+            li{ line-height: 100px; margin: 0 50px;
+                .teds{ font-size: 30px; color: #000; opacity: 0.3; }
+                .dfd { color:#000; opacity: 1; font-size: 30px;}
+            }
+        }
+    }
+    .prdwrap {  width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap;
+        .list { width: 31%; margin: 10px 1%; background-color: #f7f6f3;
+            p { margin: 10px 0;}
+
+        }
+        .imgse { width: 100%; height: 250px;
+            img{ width: 100%; height: 100%;}
+
+        }
+    }
+    #addprdlist {width: 1100px; margin: 200px auto; display: flex; flex-wrap: wrap;
+        .fds {  display: flex; justify-content: space-between; width: 100%;
+        .box4 {margin-top: 2px; height: 35px;padding-left: 10px; width:28%; border-radius: 4px; border: 1px solid #adb5bd;}
+        .box5 { margin: 0 2%; height: 35px; padding-left: 10px; width:28%;border-radius: 4px; border: 1px solid #adb5bd;}
+        .box6 { margin-top: 0px; padding-top: 5px; height: 30px; padding-left: 10px; width: 28%;border-radius: 4px; border: 1px solid #adb5bd;}
+        }
+        
+        .textarea { width: 90%;height: 250px; margin: 30px auto;
+            .texas { width:100%;  height: 100%; padding: 10px 0 0 10px;}
+        }  
+        .box { margin: 1% 1%;}  
+        .storebuttn { width: 30%; margin: 0 auto;  height: 34px;border-radius: 4px; background-color:#adb5bd ; border: none;background-color: #fff; color:#000; border: 1px solid #000;
+            &:hover { background-color: #000; color: #fff;}
+        
+        
+        }
+    }
+}
+// 관리자 매장등록 페이지
+
+.prdstore2 { margin: 300px auto; 
+    .adminmenu2 { display: flex; justify-content: center;
+        .admin_menu { display: flex;
+            li{ line-height: 100px; margin: 0 50px;
+                .teds{font-size: 30px; color: brown; opacity: 0.3; }
+                .dfd {color: brown;  opacity: 1;}
+            }
+        }
+    }
+    .storewrap { width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap;
+        .list { width: 31%; margin: 20px 1%; 
+            .line{ display: flex; margin: 10px 0;}
+        }
+    }
+    .storein { width: 1100px;  margin: 50px auto;
+        h2 {}
+    }
+    .addstror { width: 1100px;  margin: 0 auto;
+        .city1 { border: none; height: 34px; border-radius: 5px; border: 1px solid #adb5bd; }
+        .city2 { border: none; height: 34px; border-radius: 5px; border: 1px solid #adb5bd; }
+        .box11 { border: none;height: 32px; border-radius: 5px; border: 1px solid #adb5bd;} 
+        .box6 { width: 100px; border: none; height: 34px; border-radius: 5px; border: 1px solid #adb5bd; background-color: #fff; color: brown;
+        &:hover { background-color: brown; color: #fff;}
+        }
+        .box7 { margin-top: 10px; border: none; height: 32px; border-radius: 5px; border: 1px solid #adb5bd; }
+        .box12 { width: 100px; border: none; height: 34px; border-radius: 5px; border: 1px solid #adb5bd;background-color: #fff; color: brown;
+            &:hover { background-color: brown; color: #fff;}
+        }
+    }
+}   
+
+// 관리자 글 작성 페이지
+
+.insertcontainer { margin: 300px auto; 
+    .adminmenu { display: flex; justify-content: center;
+        .admin_menu { display: flex;
+            li { line-height: 100px; margin: 0 50px;
+                .rdfsf {font-size: 30px; color: #000; opacity: 0.3;
+                    
+                }
+                .rdfsfd { color: #000; opacity: 1;}
+                
+            
+            }
+        }
+    } 
+    .aven {  width: 1100px; margin: 0 auto;  display: flex; flex-wrap: wrap;
+        .line { width: 31%; margin: 20px 1%; 
+            .wrwd { width: 100%; height: 150px;
+                img {width: 100%; height: 100%; }
+            }
+            .wrwd3 { }
+            .wrwd4 { }
+        }
+    }
+    .insert_center2 { width: 1100px; margin: 100px auto;
+        .name {
+            .put { width: 50%; height: 40px; margin: 10px 0; padding-left:  15px;
+
+            }
+            
+        }
+        .area { width: 100%; height: 250px; resize: none; padding: 15px 0 0 15px;
+            .filebox { margin-top: 20px;
+                .file { border: none; width: 150px; height: 50px;}
+            }
+            .btnss {
+                .btn { border: none; width: 150px; height: 50px; background-color: #fff; }
+                .qws { color: #000; border: 1px solid #adb5bd; 
+                    &:hover { background-color: #000; color: #fff;}
+                }
+                .qwq { color: b#000; border: 1px solid #adb5bd; 
+                    &:hover { background-color: #000; color: #fff;}
+                }
+            }
+        }
+    }
+}
+
 
 // 메인페이지
 
-.header { position: relative; 
+#header { width:100%; position: absolute; bottom: 350px; background-color: #fff; z-index: 99;
     .logia { background-color: #fff; display: flex; justify-content: center;
-        .center { width: 1100px; 
+        .center { width: 1280px; 
             .login { display: flex; justify-content: flex-end;
                 .condition { display: flex; align-items: center;
                     .loj { line-height: 80px; color: #000; margin-right: 40px; }
@@ -201,20 +438,23 @@
             }
         } 
     }
-    .samsung {  margin: 0 auto; width: 100%; text-align: center; display: flex; justify-content: center; position: absolute; bottom: -53px; background-color: #fff; z-index: 99;
-        .center2 { margin: 0 auto;  width: 1100px;  background-color: #fff; border-radius: 30px; position: relative;
-                    box-shadow: 0px 3px 10px rgba(0,0,0,0.4) ; transition: all 1s; z-index: 10;
-                 display: flex; justify-content: center; 
-            .logo { display: flex; align-items: center;}
-            .gnb { display: flex; justify-content: center; text-align: center;
+    
+    .samsung {  
+        .center2 { margin: 0 auto;  width: 1000px; background-color: #fff; border-radius: 30px; position: relative; 
+
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.4) ; transition: all 1s; z-index: 10;
+            display: flex; justify-content: center; align-items: center;
+                 
+            .logo { display: flex; align-items: center; text-align: center;}
+            .gnbb { display: flex; justify-content: center; text-align: center;
                 
                 > li { margin: 0 20px; line-height: 80px; width: 100px;
-                    &:nth-child(1).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: red; border-radius: 20px; color: #fff;}
-                    &:nth-child(2).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: blue; border-radius: 20px; color: #fff;}
-                    &:nth-child(3).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: green; border-radius: 20px; color: #fff;}
-                    &:nth-child(4).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: orange; border-radius: 20px;color: #fff;}
-                    &:nth-child(5).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: pink; border-radius: 20px;color: #fff;}
-                    &:nth-child(6).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: darkmagenta; border-radius: 20px;color: #fff;}
+                    &:nth-child(1).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: #000; border-radius: 20px; color: #fff;}
+                    &:nth-child(2).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: #000; border-radius: 20px; color: #fff;}
+                    &:nth-child(3).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: #000; border-radius: 20px; color: #fff;}
+                    &:nth-child(4).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: #000; border-radius: 20px;color: #fff;}
+                    &:nth-child(5).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: #000; border-radius: 20px;color: #fff;}
+                    &:nth-child(6).on > a { display: inline-block; line-height: 40px; width: 100%; background-color: #000; border-radius: 20px;color: #fff;}
                     
                     
                     a { text-align: center; color: #000;  }
@@ -227,61 +467,102 @@
             .btn.chg .top {position: absolute; left:0 ;top:0;transform:rotate(45deg);}
             .btn.chg .mid {transform: translateX(10px);opacity: 0;}
             .btn.chg .bot {position: absolute; left:0 ;bottom:0;transform:rotate(-45deg);}
-            }
-            .sideM{  display: flex; width: 280px; height: 100vh; position: fixed;right: -280px;top: 0; background-color: #dc3545;transition: all 0.5s;
-            
-            
-                .linebtn{ position: relative; display: flex; ; flex-direction: column; 
-                    .btn2{ display: block ; position: absolute; right: 10px; top:12%; transform: translateY(-50%);
-                        .line { display: block; width: 35px; height: 2px; background-color: #fff;transition: all 0.5s;}
-                        .top2 {position: absolute; left:0 ;top:5px;transform:rotate(45deg);}
-                        .mid2 {transform: translateX(10px);opacity: 0;margin: 5px 0;}
-                        .bot2 {position: absolute; left:0 ;bottom:5px;transform:rotate(-45deg);}
-                    }
-                } 
-                .two { margin-top: 125px;
-                    li{ margin:30px 0 0 83px;
-                        span{position: relative; top: 25px; left:-27px;
-                        }
-                        a{display: block; color: #fff;}
-                    }
-                }
-                .three { 
-                    .face{ display: flex;
-                        li{margin-left: 34px;
-                            span {color: #fff;}
-                        }
-                    }
-                    p{margin:0 0 104px 34px; line-height: 34px; color: #fff; font-size: 13px;}
-                }
-            .sideM.move { right: 0;}
         }
+        .sideM{  display: flex; width: 280px; height: 100vh; position: fixed;right: -280px;top: 0; background-color: #dc3545;transition: all 0.5s;
+            
+            
+            .linebtn{ position: relative; display: flex; ; flex-direction: column; 
+                .btn2{ display: block ; position: absolute; right: 10px; top:12%; transform: translateY(-50%);
+                    .line { display: block; width: 35px; height: 2px; background-color: #fff;transition: all 0.5s;}
+                    .top2 {position: absolute; left:0 ;top:5px;transform:rotate(45deg);}
+                    .mid2 {transform: translateX(10px);opacity: 0;margin: 5px 0;}
+                    .bot2 {position: absolute; left:0 ;bottom:5px;transform:rotate(-45deg);}
+                }
+            } 
+            .two { margin-top: 125px;
+                li{ margin:30px 0 0 83px;
+                    span{position: relative; top: 25px; left:-27px;
+                    }
+                    a{display: block; color: #fff;}
+                }
+            }
+            .three { 
+                .face{ display: flex;
+                    li{margin-left: 34px;
+                        span {color: #fff;}
+                    }
+                }
+                p{margin:0 0 104px 34px; line-height: 34px; color: #fff; font-size: 13px;}
+            }
+        }
+        .sideM.move { right: 0;}      
     }
 }
 #header.fixer{position: fixed; top:0; bottom: unset; display: block;
-.center2 { width: 100%; border-radius: 0;}
+    .center2 { width: 100%; border-radius: 0;}
 }
 .container { 
-    .slideWrap{width: 100%;height: 500px;
-        .swiper-wrapper {
-            .swiper-slide{ background: no-repeat; background-size: cover; background-position: center; 
-            
+    .cont1 { 
+        .slideWrap{width: 100%;height: 500px;
+            .swiper-wrapper {
+                .swiper-slide{ background: no-repeat; background-size: cover; background-position: center;}
+                .swiper-slide.s1{background-image: url(../img/bu1.jpg);}
+                .swiper-slide.s2{background-image: url(../img/bu2.jpg);}
+                .swiper-slide.s3{background-image: url(../img/ap1.jpg);}
+                .swiper-slide.s4{background-image: url(../img/ap2.jpg);}
+               
+            }
+        }
+        .swiper{
+            .circleBtn{position: absolute;  bottom: 22px; z-index: 99  ; 
+                display: flex; justify-content: center;
+                .swiper-pagination-bullet{margin: 0 10px; width: 20px; height: 20px;  background-color:transparent;border:3px solid orange; opacity: 0.5;}
+                .swiper-pagination-bullet-active { background-color: #fff; border:3px solid red; opacity: 1;}
             }
             
-            
+            .prevBtn{position: absolute; background-image: url(../img/leftBtn.png); width: 100px; height: 100px; background-repeat: no-repeat;
+                left:50px; top:50%; transform: translateY(-50%);  z-index: 99;}
+            .nextBtn{position: absolute; background-image: url(../img/rightBtn.png); width: 100px; height: 100px; background-repeat:no-repeat;
+                right:50px; top:50%; transform: translateY(-50%); z-index: 99;}     
         }
     }
-    .swiper{
-        .circleBtn{position: absolute;  bottom: 22px; z-index: 99  ; 
-            display: flex; justify-content: center;
-            .swiper-pagination-bullet{margin: 0 10px; width: 20px; height: 20px;  background-color:transparent;border:3px solid orange; opacity: 0.5;}
-            .swiper-pagination-bullet-active { background-color: #fff; border:3px solid red; opacity: 1;}
+    .cont2 { padding: 100px 0;
+        .center { width: 90%; margin: 0 auto;
+            .tvpro{margin: 30px 0; text-align: center;}
+            .image1{ margin: 50px 0;width: 650px; height: 500px; background-image:url(../img/fo27.jpg);
+                background-size: cover; background-repeat: no-repeat;
+            }
+            .silder {position: relative;margin: 0 auto;width: 584px; height: 110px;
+                    
+                .view{width: 100%; height: 100%;
+                    > div{ width: 100%; height: 100%; position: absolute; 
+                        opacity: 0; transition: all 0.5s; z-index: 2;
+                    &:nth-child(1) { opacity: 1; z-index: 3;}
+                    }
+                    .pto4{display: flex; 
+                         div {border: 3px solid green;box-sizing: border-box;
+                             a img{width: 140px; height: 105px;}
+                        }
+                    }
+                }
+                .btns2{ 
+                    div{position: absolute; top:50%; transform: translateY(-50%);z-index: 5;}
+                    .prevBtn2{  left:0px;}
+                    .nextBtn2{ right: 0px;}    
+                }
+                .circleBtn2{ position: absolute; left:50%; bottom: 10px; transform: translateX(-50%);
+                    z-index: 4;display: flex;
+                    li{ 
+                        a { display: block; width: 20px; background-color: #000; border-radius: 50%;
+                            height: 20px; margin: 0 10px;transition: all 0.5s;}
+                    }
+                    li.on a{background-color: pink;width: 50px; border-radius: 20px; }
+                 }
+            }
         }
-        
-        .prevBtn{position: absolute;  width: 100px; height: 100px;
-            left:50px; top:50%; transform: translateY(-50%);  z-index: 99;}
-        .nextBtn{position: absolute; width: 100px; height: 100px; 
-            right:50px; top:50%; transform: translateY(-50%); z-index: 99;}     
     }
-
+    .cont3 {  height: 500px; background-color: tan;}
+    .cont4 { height: 500px; background-color: yellow;}
+    .cont5 { height: 500px; background-color: green;}
+    .cont6 { height: 700px; background-color: #dc3545;}
 }

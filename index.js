@@ -49,22 +49,18 @@ MongoClient.connect("mongodb+srv://admin:qwer1234@cluster0.ahltorl.mongodb.net/?
 });
 
 // 상품 메뉴 페이지
-app.get("/menu/list",(req,res)=>{
-  db.collection("list").find({category:"애플"}).toArray((err,result)=>{
+app.get("/menu/apple",(req,res)=>{
+  db.collection("ex1_list").find({category:"애플"}).toArray((err,result)=>{
     res.render("menu",{listData:result});
   });
 });
 
-app.get("/menu/list",(req,res)=>{
-  db.collection("list").find({category:"삼성"}).toArray((err,result)=>{
+app.get("/menu/samsung",(req,res)=>{
+  db.collection("ex1_list").find({category:"삼성"}).toArray((err,result)=>{
     res.render("menu",{listData:result});
   });
 });
-app.get("/menu/list",(req,res)=>{
-  db.collection("list").find({category:""}).toArray((err,result)=>{
-    res.render("menu",{listData:result});
-  });
-});
+
 
   // 매장 검색 페이지(사용자)
   app.get("/store",async(req,res)=>{
@@ -347,6 +343,7 @@ app.post("/add/prdlist",upload.single('thumbnail'),(req,res)=>{
     db.collection("ex1_list").insertOne({
       num:result1.prdCount + 1,
       name:req.body.name,
+      context:req.body.context,
       thumbnail:fileTest, // 파일태그
       category:req.body.category // 셀렉트 태그
     },(err,result)=>{
@@ -412,6 +409,10 @@ db.collection("ex1_count").findOne({name:"매장등록"},(err,result1)=>{
 });         
 })
 
+
+
+  
+
 // 관리자 공지글등록 페이지 경로
 app.get("/admin/insert",(req,res)=>{
   // 글 작성
@@ -444,6 +445,8 @@ app.post("/addinsert",upload.single('file'),(req,res)=>{
     });
   });         
 })
+
+
 
 //게시글 목록 get 요청
 
@@ -585,6 +588,16 @@ app.post("/addevent",upload.single('file'),(req,res)=>{
     });
   });         
 })
+// 이벤트 상세화면 get 요청 / :변수명 작명가능
+app.get("/eventdetail/:no",function(req,res){  //no 작명  // 원하는 페이지만 갖고옴
+  // db안에 해당 게시글번호에 맞는 데이터만 꺼내오고 ejs 파일로 응답
+  db.collection("ex1_event").updateOne({num:Number(req.params.no)},{$inc:{eventviews:1}},function(err,result1){
+      db.collection("ex1_event").findOne({num:Number(req.params.no)},function(err,result1){
+          
+              res.render("eventdetail",{eventData:result1,userData:req.user});  
+          });                                //게시물                        
+      });
+  });
 
 // 조건문을 이용해서 입력한 검색어가 있는 경우는 aggregate({}).sort()skip().limit()
 

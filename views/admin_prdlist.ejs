@@ -26,24 +26,32 @@
         <div class="prdwrap">
             <% for(let i = 0; i < prdData.length; i++){ %> 
             <div class="list">
-                <h3><%- prdData[i].num %></h3>
-                <p><%- prdData[i].category %></p>
-                <p><%- prdData[i].name %></p>
                 <div class="imgse">
                     <img src="/upload/<%- prdData[i].thumbnail %>"> <!-- <img src="등록된 상품이미지 경로"> -->
                 </div>
+                <h3><%- prdData[i].num %></h3>
+                <p><%- prdData[i].category %></p>
+                <p><%- prdData[i].name %></p>
+                <p><%- prdData[i].context %></p>
+                
             </div>
             <% } %>
         </div>
         <!-- 상품을 등록하는 form태그 구간 -->
         <form id="addprdlist"action="/add/prdlist" method="post" enctype="multipart/form-data">
-            <select class="box4"name="category">
-                <option value="애플">애플</option>
-                <option value="삼성">삼성</option>
-                
-            </select>
-            <input class="box5" type="text" name="name">
-            <input class="box6" type="file" name="thumbnail">
+            <div class="fds">
+                <select class="box4 box"name="category">
+                    <option value="애플">애플</option>
+                    <option value="삼성">삼성</option>
+                    
+                </select>
+                <input class="box5 box" type="text" name="name" placeholder="상품이름">
+                <input class="box6 box" type="file" name="thumbnail">
+            </div>
+            
+            <div class="textarea">
+                <textarea class="texas"name="context" placeholder="내용 입력"></textarea>
+            </div>
             <button class="storebuttn" type="submit">상품등록</button>        
         </form>
     </div>

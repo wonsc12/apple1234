@@ -1,15 +1,16 @@
 const header = document.querySelector("#header");
-const gnb = document.querySelectorAll(".gnb > li");
+const gnb = document.querySelectorAll(".gnbb > li");
 const sections = document.querySelectorAll(".section")
 
-
+console.log(sections);
+console.log(gnb);
 let secStart = [];
 
     for(let i=0 ; i< gnb.length; i++){
 
-        gnb[i].addEventListener("click",function(e){
+        gnb[i].addEventListener("click",function(){
 
-            e.preventDefault();
+            
             let scrollMove =sections[i].offsetTop;
             window.scrollTo({
                 top:scrollMove,
