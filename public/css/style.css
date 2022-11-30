@@ -201,49 +201,10 @@ body {
   width: 100%;
   background-color: #fff;
 }
-#header2 .logia {
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-}
-#header2 .logia .center {
-  width: 1280px;
-}
-#header2 .logia .center .login {
-  display: flex;
-  justify-content: flex-end;
-}
-#header2 .logia .center .login .condition {
-  display: flex;
-  align-items: center;
-}
-#header2 .logia .center .login .condition .loj {
-  line-height: 80px;
-  color: #000;
-  margin-right: 40px;
-}
-#header2 .logia .center .login .condition .arr {
-  color: #000;
-}
-#header2 .logia .center .login .condition .name a {
-  color: #000;
-}
-#header2 .logia .center .login .condition .dsf {
-  color: #000;
-}
-#header2 .logia .center .login .condition .dsf::after {
-  content: "";
-  margin: 0 10px;
-  display: inline-block;
-  width: 1px;
-  height: 12px;
-  background-color: #000;
-}
 #header2 .samsung2 .center2 {
   margin: 0 auto;
-  width: 1280px;
+  width: 100%;
   background-color: #fff;
-  border-radius: 30px;
   position: relative;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
   transition: all 1s;
@@ -271,6 +232,41 @@ body {
 #header2 .samsung2 .center2 .gnbb > li a {
   text-align: center;
   color: #000;
+}
+#header2 .samsung2 .center2 .logia {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+#header2 .samsung2 .center2 .logia .center .login {
+  display: flex;
+  justify-content: flex-end;
+}
+#header2 .samsung2 .center2 .logia .center .login .condition {
+  display: flex;
+  align-items: center;
+}
+#header2 .samsung2 .center2 .logia .center .login .condition .loj {
+  line-height: 80px;
+  color: #000;
+  margin-right: 40px;
+}
+#header2 .samsung2 .center2 .logia .center .login .condition .arr {
+  color: #000;
+}
+#header2 .samsung2 .center2 .logia .center .login .condition .name a {
+  color: #000;
+}
+#header2 .samsung2 .center2 .logia .center .login .condition .dsf {
+  color: #000;
+}
+#header2 .samsung2 .center2 .logia .center .login .condition .dsf::after {
+  content: "";
+  margin: 0 10px;
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: #000;
 }
 #header2 .samsung2 .center2 .btn {
   position: absolute;
@@ -942,54 +938,85 @@ body {
   color: #fff;
 }
 
-#header {
-  width: 100%;
-  position: absolute;
-  bottom: 350px;
-  background-color: #fff;
-  z-index: 99;
+.brd_center2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
-#header .logia {
-  background-color: #fff;
+.brd_center2 #brd_form {
+  width: 730px;
+}
+.brd_center2 #brd_form .name {
+  display: flex;
+}
+.brd_center2 #brd_form .name .put {
+  padding-left: 20px;
+  width: 44%;
+  border: none;
+  border: 2px solid #f4f4f4;
+  height: 43px;
+  margin: 0 10px;
+}
+.brd_center2 #brd_form .teq {
+  margin: 20px 0 20px 0;
+}
+.brd_center2 #brd_form .area {
+  width: 94%;
+  border: none;
+  border: 2px solid #f4f4f4;
+  height: 240px;
+  padding: 20px 0 0 20px;
+}
+.brd_center2 #brd_form .filebox {
+  width: 100%;
+  height: 50px;
   display: flex;
   justify-content: center;
 }
-#header .logia .center {
-  width: 1280px;
+.brd_center2 #brd_form .filebox .file {
+  margin-top: 20px;
+  border: none;
+  width: 94%;
+  height: 43px;
+  border: 2px solid #f4f4f4;
+  padding: 10px 0 0 20px;
 }
-#header .logia .center .login {
-  display: flex;
-  justify-content: flex-end;
-}
-#header .logia .center .login .condition {
-  display: flex;
-  align-items: center;
-}
-#header .logia .center .login .condition .loj {
-  line-height: 80px;
+.brd_center2 #brd_form .btnss .btn {
+  width: 144px;
+  height: 54px;
+  border: 1px solid #acacac;
   color: #000;
-  margin-right: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 50px 10px;
 }
-#header .logia .center .login .condition .arr {
-  color: #000;
-}
-#header .logia .center .login .condition .name a {
-  color: #000;
-}
-#header .logia .center .login .condition .dsf {
-  color: #000;
-}
-#header .logia .center .login .condition .dsf::after {
-  content: "";
-  margin: 0 10px;
-  display: inline-block;
-  width: 1px;
-  height: 12px;
+.brd_center2 #brd_form .btnss .qws:hover {
+  color: #fff;
   background-color: #000;
+}
+.brd_center2 #brd_form .btnss .qwq:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.image .imagebox {
+  width: 100%;
+  height: 300px;
+}
+.image .imagebox img {
+  width: 100%;
+  height: 100%;
+}
+
+#header {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  z-index: 99;
 }
 #header .samsung .center2 {
   margin: 0 auto;
-  width: 1000px;
+  width: 1280px;
   background-color: #fff;
   border-radius: 30px;
   position: relative;
@@ -1015,57 +1042,44 @@ body {
   line-height: 80px;
   width: 100px;
 }
-#header .samsung .center2 .gnbb > li:nth-child(1).on > a {
-  display: inline-block;
-  line-height: 40px;
-  width: 100%;
-  background-color: #000;
-  border-radius: 20px;
-  color: #fff;
-}
-#header .samsung .center2 .gnbb > li:nth-child(2).on > a {
-  display: inline-block;
-  line-height: 40px;
-  width: 100%;
-  background-color: #000;
-  border-radius: 20px;
-  color: #fff;
-}
-#header .samsung .center2 .gnbb > li:nth-child(3).on > a {
-  display: inline-block;
-  line-height: 40px;
-  width: 100%;
-  background-color: #000;
-  border-radius: 20px;
-  color: #fff;
-}
-#header .samsung .center2 .gnbb > li:nth-child(4).on > a {
-  display: inline-block;
-  line-height: 40px;
-  width: 100%;
-  background-color: #000;
-  border-radius: 20px;
-  color: #fff;
-}
-#header .samsung .center2 .gnbb > li:nth-child(5).on > a {
-  display: inline-block;
-  line-height: 40px;
-  width: 100%;
-  background-color: #000;
-  border-radius: 20px;
-  color: #fff;
-}
-#header .samsung .center2 .gnbb > li:nth-child(6).on > a {
-  display: inline-block;
-  line-height: 40px;
-  width: 100%;
-  background-color: #000;
-  border-radius: 20px;
-  color: #fff;
-}
 #header .samsung .center2 .gnbb > li a {
   text-align: center;
   color: #000;
+}
+#header .samsung .center2 .logia {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+#header .samsung .center2 .logia .center .login {
+  display: flex;
+  justify-content: flex-end;
+}
+#header .samsung .center2 .logia .center .login .condition {
+  display: flex;
+  align-items: center;
+}
+#header .samsung .center2 .logia .center .login .condition .loj {
+  line-height: 60px;
+  color: #000;
+  margin-right: 40px;
+}
+#header .samsung .center2 .logia .center .login .condition .arr {
+  color: #000;
+}
+#header .samsung .center2 .logia .center .login .condition .name a {
+  color: #000;
+}
+#header .samsung .center2 .logia .center .login .condition .dsf {
+  color: #000;
+}
+#header .samsung .center2 .logia .center .login .condition .dsf::after {
+  content: "";
+  margin: 0 10px;
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: #000;
 }
 #header .samsung .center2 .btn {
   position: absolute;
@@ -1189,8 +1203,8 @@ body {
 }
 
 .container .cont1 .slideWrap {
-  width: 100%;
-  height: 500px;
+  width: 1400px;
+  height: 700px;
 }
 .container .cont1 .slideWrap .swiper-wrapper .swiper-slide {
   background: no-repeat;
@@ -1198,16 +1212,16 @@ body {
   background-position: center;
 }
 .container .cont1 .slideWrap .swiper-wrapper .swiper-slide.s1 {
-  background-image: url(../img/bu1.jpg);
+  background-image: url(../img/bb7.jpg);
 }
 .container .cont1 .slideWrap .swiper-wrapper .swiper-slide.s2 {
-  background-image: url(../img/bu2.jpg);
+  background-image: url(../img/bb3.jpg);
 }
 .container .cont1 .slideWrap .swiper-wrapper .swiper-slide.s3 {
-  background-image: url(../img/ap1.jpg);
+  background-image: url(../img/bb5.jpg);
 }
 .container .cont1 .slideWrap .swiper-wrapper .swiper-slide.s4 {
-  background-image: url(../img/ap2.jpg);
+  background-image: url(../img/bb6.jpg);
 }
 .container .cont1 .swiper .circleBtn {
   position: absolute;
@@ -1252,21 +1266,25 @@ body {
   z-index: 99;
 }
 .container .cont2 {
-  padding: 100px 0;
+  padding: 200px 0;
+  display: flex;
+  justify-content: center;
 }
 .container .cont2 .center {
-  width: 90%;
-  margin: 0 auto;
+  width: 44%;
 }
 .container .cont2 .center .tvpro {
   margin: 30px 0;
   text-align: center;
 }
+.container .cont2 .center .tvpro h2 {
+  font-size: 40px;
+}
 .container .cont2 .center .image1 {
-  margin: 50px 0;
-  width: 650px;
+  margin: 50px auto;
+  width: 550px;
   height: 500px;
-  background-image: url(../img/fo27.jpg);
+  background-image: url(../img/bb1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1292,14 +1310,14 @@ body {
   opacity: 1;
   z-index: 3;
 }
-.container .cont2 .center .silder .view .pto4 {
+.container .cont2 .center .silder .view .pto3 {
   display: flex;
 }
-.container .cont2 .center .silder .view .pto4 div {
+.container .cont2 .center .silder .view .pto3 div {
   border: 3px solid green;
   box-sizing: border-box;
 }
-.container .cont2 .center .silder .view .pto4 div a img {
+.container .cont2 .center .silder .view .pto3 div a img {
   width: 140px;
   height: 105px;
 }
@@ -1310,15 +1328,17 @@ body {
   z-index: 5;
 }
 .container .cont2 .center .silder .btns2 .prevBtn2 {
-  left: 0px;
+  left: -20px;
+  font-size: 30px;
 }
 .container .cont2 .center .silder .btns2 .nextBtn2 {
-  right: 0px;
+  right: -20px;
+  font-size: 30px;
 }
 .container .cont2 .center .silder .circleBtn2 {
   position: absolute;
   left: 50%;
-  bottom: 10px;
+  bottom: -50px;
   transform: translateX(-50%);
   z-index: 4;
   display: flex;
@@ -1333,13 +1353,219 @@ body {
   transition: all 0.5s;
 }
 .container .cont2 .center .silder .circleBtn2 li.on a {
-  background-color: pink;
+  background-color: #dc3545;
   width: 50px;
   border-radius: 20px;
 }
-.container .cont3 {
+.container .cont2 .cont2center {
+  width: 44%;
+}
+.container .cont2 .cont2center .tvpro {
+  margin: 30px 0;
+  text-align: center;
+}
+.container .cont2 .cont2center .tvpro h2 {
+  font-size: 40px;
+}
+.container .cont2 .cont2center .image12 {
+  margin: 50px auto;
+  width: 550px;
   height: 500px;
-  background-color: tan;
+  background-image: url(../img/bb1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container .cont2 .cont2center .silder2 {
+  position: relative;
+  margin: 0 auto;
+  width: 584px;
+  height: 110px;
+}
+.container .cont2 .cont2center .silder2 .view2 {
+  width: 100%;
+  height: 100%;
+}
+.container .cont2 .cont2center .silder2 .view2 > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: 2;
+}
+.container .cont2 .cont2center .silder2 .view2 > div:nth-child(1) {
+  opacity: 1;
+  z-index: 3;
+}
+.container .cont2 .cont2center .silder2 .view2 .pto4 {
+  display: flex;
+}
+.container .cont2 .cont2center .silder2 .view2 .pto4 div {
+  border: 3px solid green;
+  box-sizing: border-box;
+}
+.container .cont2 .cont2center .silder2 .view2 .pto4 div a img {
+  width: 140px;
+  height: 105px;
+}
+.container .cont2 .cont2center .silder2 .btns22 div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+.container .cont2 .cont2center .silder2 .btns22 .prevBtn22 {
+  left: -20px;
+  font-size: 30px;
+}
+.container .cont2 .cont2center .silder2 .btns22 .nextBtn22 {
+  right: -20px;
+  font-size: 30px;
+}
+.container .cont2 .cont2center .silder2 .circleBtn22 {
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+}
+.container .cont2 .cont2center .silder2 .circleBtn22 li a {
+  display: block;
+  width: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  height: 20px;
+  margin: 0 10px;
+  transition: all 0.5s;
+}
+.container .cont2 .cont2center .silder2 .circleBtn22 li.on a {
+  background-color: #dc3545;
+  width: 50px;
+  border-radius: 20px;
+}
+.container .cont3 .center5 {
+  display: flex;
+  justify-content: center;
+}
+.container .cont3 .center5 .portfolio {
+  width: 80%;
+}
+.container .cont3 .center5 .portfolio .bts {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.container .cont3 .center5 .portfolio .bts li::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  width: 2px;
+  height: 15px;
+  background-color: #eb8102;
+  margin: 0 31px;
+}
+.container .cont3 .center5 .portfolio .bts li a {
+  color: #000;
+}
+.container .cont3 .center5 .portfolio .bts li:last-child::after {
+  display: none;
+}
+.container .cont3 .center5 .portfolio .bts li.on a {
+  color: red;
+}
+.container .cont3 .center5 .portfolio .box12 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .cont3 .center5 .portfolio .box12 .all {
+  width: 31.333333%;
+  margin: 1%;
+  position: relative;
+}
+.container .cont3 .center5 .portfolio .box12 .all img {
+  width: 100%;
+  height: 100%;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  text-align: center;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg h2 {
+  color: #fff;
+  margin-top: 92px;
+  line-height: 35px;
+  font-size: 18px;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg h2:hover {
+  color: yellow;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg .tessd {
+  display: flex;
+  justify-content: center;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg .tessd .textde {
+  text-decoration: line-through;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg .tessd p {
+  margin: 0 10px;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg p {
+  color: #fff;
+  font-weight: bold;
+  margin: 18px 0 28px 0;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg a {
+  display: block;
+  color: #fff;
+  width: 150px;
+  height: 38px;
+  background-color: transparent;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  line-height: 2;
+}
+.container .cont3 .center5 .portfolio .box12 .all:hover .bg {
+  opacity: 0.6;
+  z-index: 55;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg2 {
+  width: 100%;
+  padding: 27px 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  opacity: 0.6;
+  left: 0;
+  bottom: 0px;
+  transition: all 0.5s;
+}
+.container .cont3 .center5 .portfolio .box12 .all .bg2 p {
+  margin-left: 15px;
+  line-height: 26px;
+  height: 42px;
+}
+.container .cont3 .center5 .portfolio .box12 .all:hover .bg2 {
+  bottom: -96px;
+}
+.container .cont3 .center5 .portfolio .box12 .small {
+  height: 300px;
+}
+.container .cont3 .center5 .portfolio .box12 .big {
+  height: 520px;
+}
+.container .cont3 .center5 .portfolio .box12 .wide {
+  width: 64.666666%;
+  height: 520px;
 }
 .container .cont4 {
   height: 500px;

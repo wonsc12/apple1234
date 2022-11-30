@@ -51,13 +51,13 @@ MongoClient.connect("mongodb+srv://admin:qwer1234@cluster0.ahltorl.mongodb.net/?
 // 상품 메뉴 페이지
 app.get("/menu/apple",(req,res)=>{
   db.collection("ex1_list").find({category:"애플"}).toArray((err,result)=>{
-    res.render("menu",{listData:result});
+    res.render("menu",{listData:result,userData:req.user});
   });
 });
 
 app.get("/menu/samsung",(req,res)=>{
-  db.collection("ex1_list").find({category:"삼성"}).toArray((err,result)=>{
-    res.render("menu",{listData:result});
+  db.collection("ex1_list").find({category:""}).toArray((err,result)=>{
+    res.render("menu",{listData:result,userData:req.user});
   });
 });
 
@@ -121,6 +121,7 @@ app.get("/menu/samsung",(req,res)=>{
       db.collection("ex1_storelist").find({}).sort({number:-1}).skip(startFrom).limit(perPage).toArray((err,result)=>{ // 역순-1  정순서 1
         // console.log(result);                 //역순      //순서   //2개
         res.render("store",{storelist:result,
+                            userData:req.user,
                             paging:paging,
                             pageNumber:pageNumber,
                             blockStart:blockStart,
@@ -289,7 +290,7 @@ app.post("/myupdate",function(req,res){
   if(req.body.originpass === req.user.joinpass){  
       db.collection("ex1_join").updateOne({joinid:req.user.joinid},{$set:{
                                       // ({어떤항목을찾아서},{무엇을바꿀건지})
-          
+                                     
           joinnick:req.body.usernick,
           joinpass:req.body.userpass, // 마이페이지에 있는 네임
           joinphone:req.body.userphone, 
@@ -421,9 +422,12 @@ app.get("/admin/insert",(req,res)=>{
   });      
 });
 
-app.post("/addinsert",upload.single('file'),(req,res)=>{
-    if(req.file){
-      fileUpload = req.file.originalname;
+app.post("/addinsert",upload.array('file'),(req,res)=>{
+
+    let fileUpload = [];
+    if(req.files){
+      fileUpload[0] = req.files[0].originalname;
+      fileUpload[1] = req.files[1].originalname;
     }
     else{
         fileUpload = null;
@@ -435,7 +439,8 @@ app.post("/addinsert",upload.single('file'),(req,res)=>{
       subject:req.body.subject,
       date:req.body.date,
       context:req.body.context, // insert에서 넘겨준 값
-      file:fileUpload,
+      file:fileUpload[0],
+      file2:fileUpload[1],
       views:0,
       date2:moment().tz("Asia/seoul").format("YYYY-MM-DD HH:mm:ss")
     },(err,result)=>{
@@ -529,7 +534,7 @@ app.get("/brdlist",async (req,res)=>{
   db.collection("ex1_insert").find({}).sort({number:-1}).skip(startFrom).limit(perPage).toArray((err,result)=>{ // 역순-1  정순서 1
       // console.log(result);                 //역순      //순서   //2개
       res.render("brdlist",{insertData2:result,
-                          
+                          userData:req.user,
                           paging:paging,
                           pageNumber:pageNumber,
                           blockStart:blockStart,
@@ -665,7 +670,7 @@ app.get("/event",async (req,res)=>{
   db.collection("ex1_event").find({}).sort({number:-1}).skip(startFrom).limit(perPage).toArray((err,result)=>{ // 역순-1  정순서 1
       // console.log(result);                 //역순      //순서   //2개
       res.render("event",{eventData:result,
-                          
+                          userData:req.user,
                           paging:paging,
                           pageNumber:pageNumber,
                           blockStart:blockStart,
@@ -719,6 +724,7 @@ app.post("/Inquire",upload.single('file'),function(req,res){
   }
 
   db.collection("ex1_count").findOne({name:"문의게시판"},function(err,result){
+
       db.collection("ex1_Inquire").insertOne({
           brdid:result.board +1 ,
           brdname:req.body.name,
@@ -729,6 +735,7 @@ app.post("/Inquire",upload.single('file'),function(req,res){
           brdauther:req.user.joinnick, // 로그인한 유저의 닉네임
           brdviews:0,
           brdfile:fileUpload,
+          category:req.body.category,
           brddate:moment().tz("Asia/seoul").format("YYYY-MM-DD HH:mm:ss") //tz=timezone
           //                                        2022-10-21 10:43:20
       },function(err,result){
@@ -738,3 +745,123 @@ app.post("/Inquire",upload.single('file'),function(req,res){
       });
   });
 });
+
+
+app.get("/Inquire",async (req,res)=>{
+  // query string 보내줌 데이터값 받는 방법
+  // console.log(req.query.page);  // boardtest?page=300
+  // res.send("테스트");
+
+  // 사용자가 게시판에 접속시 몃번 페이징 번호로 접속했는지 체크
+  // let pageNumber = typeof(req.query.page);
+  // console.log(pageNumber);
+  // res.send("테스트");
+  let pageNumber = (req.query.page ==null) ? 1 : Number(req.query.page) ; //let pageNumber = 조건식 ? 참 : 거짓 ;
+  // console.log(pageNumber);
+  
+  // 블록당 보여줄 데이터 갯수  
+  let perPage = 3;   // 게시판 목록에 보여줄 갯수
+  
+  // 블록당 보여줄 페이징 번호 갯수
+
+  let blockCount = 3; // 숫자에 따라 계산은 달라짐
+
+  // 현재 페이지 블록 구하기
+
+  let blockNum = Math.ceil(pageNumber / blockCount);  // Math.ceil 올림
+
+  // console.log(blockNum);
+
+  // 블록안에 있는 페이징의 시작번호 값을 알아내기
+
+  let blockStart = ((blockNum - 1) * blockCount) + 1;
+
+  // console.log(blockStart);    
+
+  // 블록안에 있는 페이징의 끝 번호 값을 알아내자
+  
+  let blockEnd = blockStart + blockCount -1 ;
+
+  // 데이터베이스 콜렉션에 있는 전체 객체의 갯수값 가져오는 명령어
+
+  let totalData = await db.collection("ex1_inquire").countDocuments({});
+  
+  // console.log(totalData);
+
+  // 전체 데이터값을 통해서 -> 몃개의 페이징 번호가 만들어져야 하는지 계산
+
+  let paging = Math.ceil(totalData / perPage);
+
+  // 블록에서 마지막 번호가 페이징의 끝번호보다 크다면 페이징의 끝번호를 강제로 부여
+  if(blockEnd > paging){
+      blockEnd = paging;
+  }
+
+  // 블록의 총 갯수 구하기
+
+  let totalBlock = Math.ceil(paging / blockCount);
+  
+  // 데이터베이스에서 꺼내오는 데이터의 순번값을 결정   0 2번페이지2 4
+
+  let startFrom = (pageNumber -1) * perPage 
+
+
+  // 데이터베이스 콜렉션에서 데이터값을 2개씩 순번에 맞춰서 가져오기
+  db.collection("ex1_inquire").find({}).sort({number:-1}).skip(startFrom).limit(perPage).toArray((err,result)=>{ // 역순-1  정순서 1
+      // console.log(result);                 //역순      //순서   //2개
+      res.render("inquire",{eventData:result,
+                          userData:req.user,
+                          paging:paging,
+                          pageNumber:pageNumber,
+                          blockStart:blockStart,
+                          blockEnd:blockEnd,
+                          blockNum:blockNum,
+                          totalBlock:totalBlock});
+  }); 
+      // board.ejs에 전달해줘야할 데이터들
+      // 1.board 콜렉션에서 가지고온 데이터값 result
+      // 2.페이징 번호의 총 갯수값 paging
+      // 3.몃번 페이징을 보고 있는지 번호값 pageNumber
+      // 4.블록안에 페이징 시작하는 번호값 blockStart
+      // 5.블록안에 페이징 끝나는 번호값 blockEnd
+      // 6.블록 번호 순서값 blockNum
+      // 7.블록 총 갯수 totalBlock
+  
+
+  // sort({정렬할프로퍼티명:1}) 1 오름차순 -1 은 내림차순
+
+  // 블록의 총갯수 , 데이터베이스에 실제 값을 꺼내기 위해 몇개씩 꺼내올건지 설정 , find 명령어 sort() skip() limit()
+
+  // 만약 블록안에 있는 페이징의 끝 번호값이 전체 페이징 갯수보다 많다면 강제로 마지막 페이징 번호 부여
+  
+ 
+});
+
+// 상품 질문 게시판
+app.get("/inquire/ba",function(req,res){
+    
+  db.collection("ex1_Inquire").find({category:"ba"}).toArray(function(err,result){  
+    console.log(result);
+      res.render("inquireba",{userData:req.user,category:result}); //로그인시 회원정보데이터 ejs 파일로 전달
+    });
+  
+});
+app.get("/inquire/sam",function(req,res){
+    
+  db.collection("ex1_Inquire").find({category:"sam"}).toArray(function(err,result){  
+    console.log(result);
+      res.render("inquireba",{userData:req.user,category:result}); //로그인시 회원정보데이터 ejs 파일로 전달
+    });
+  
+});
+app.get("/inquire/ju",function(req,res){
+    
+  db.collection("ex1_Inquire").find({category:"ju"}).toArray(function(err,result){  
+    console.log(result);
+      res.render("inquireba",{userData:req.user,category:result}); //로그인시 회원정보데이터 ejs 파일로 전달
+    });
+  
+});
+
+
+

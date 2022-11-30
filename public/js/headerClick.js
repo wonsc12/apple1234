@@ -8,19 +8,12 @@ let secStart = [];
 
     for(let i=0 ; i< gnb.length; i++){
 
-        gnb[i].addEventListener("click",function(){
-
-            
-            let scrollMove =sections[i].offsetTop;
-            window.scrollTo({
-                top:scrollMove,
-                behavior:"smooth"
-            });
+        
             for(let i = 0 ; i < sections.length; i++){
 
                 secStart[i] = sections[i].offsetTop;
             }
-        });
+        
     };
    
     
@@ -43,22 +36,7 @@ let secStart = [];
             
             fluson();
         }
-        for(let i=0; i<gnb.length; i++){
-
-            if(scTop >= secStart[i]){
-                for(let j=0; j<gnb.length; j++){
-                    gnb[j].classList.remove("on");
-                
-                }
-                gnb[i].classList.add("on");
-            
-            }
-        }
-        function fluson(){
-             
-            for(let i=0; i<gnb.length; i++){
-                gnb[i].classList.remove("on");
-            }
-        }
+        
+        
     });
 

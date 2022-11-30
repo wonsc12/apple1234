@@ -1,21 +1,5 @@
 <div id="header">
-   <div class="logia">
-        <div class="center">
-            <div class="login">
-                <div class="condition">
-                    <% if(!userData) { %> <!-- 회원정보 프로퍼티가 없을때 -->
-                    <i class="fa-solid fa-right-to-bracket arr"></i>
-                    <a class="loginuser loj" href="/login">로그인</a>
-                    <i class="fa-solid fa-registered arr"></i>
-                    <a class="logina loj" href="/join">회원가입</a>
-                    <% } else { %>
-                    <div class="name loj"><a href="<%- userData.joinid == "admin!12" ?  "/admin/prdlist" : "/mypage" %>"><%- userData.joinid %>님</a></div> 
-                    <a class="loginb loj" href="/logout">로그아웃</a>
-                    <% } %>
-                </div>
-            </div> 
-        </div>
-   </div> 
+   
    <div class="samsung">
         <div class="center2">
             <div class="logo">
@@ -26,19 +10,37 @@
             <div class="menu">
                 <ul class="gnbb">
                     <li class="on"><a href="/menu/apple">APPLE</a></li>
-                    <li><a href="/menu/samsung">SAMSUNG</a></li>
                     <li><a href="/store">매장안내</a></li>
                     <li><a href="/event">EVENT</a></li>
                     <li><a href="/brdlist">공지</a></li>
-                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="/Inquire">문의</a></li>
                 </ul>
             </div>
+            <div class="logia">
+                <div class="center">
+                    <div class="login">
+                        <div class="condition">
+                            <% if(!userData) { %> <!-- 회원정보 프로퍼티가 없을때 -->
+                            <i class="fa-solid fa-right-to-bracket arr"></i>
+                            <a class="loginuser loj" href="/login">로그인</a>
+                            <i class="fa-solid fa-registered arr"></i>
+                            <a class="logina loj" href="/join">회원가입</a>
+                            <% } else { %>
+                            <div class="name loj"><a href="<%- userData.joinid == "admin!12" ?  "/admin/prdlist" : "/mypage" %>"><%- userData.joinid %>님</a></div> 
+                            <a class="loginb loj" href="/logout">로그아웃</a>
+                            <% } %>
+                        </div>
+                    </div> 
+                </div>
+           </div> 
             <div class="btn">
                 <span class="line top"></span>
                 <span class="line mid"></span>
                 <span class="line bot"></span>
             </div>
+            
         </div>
+        
         <div class="sideM">
             <div class="linebtn">
                 <div class="btn2">
